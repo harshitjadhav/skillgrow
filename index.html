@@ -1,1 +1,122 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillGrow - Learn & Grow</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;font-family:Arial,sans-serif;
+ background:#f3f7ff;color:#172554;
+}
+header{
+ background:#155eef;color:white;
+ padding:22px;text-align:center;
+}
+header h1{margin:0;font-size:30px}
+nav{margin-top:15px}
+nav a{
+ color:white;text-decoration:none;
+ margin:10px;font-weight:bold;
+}
+.hero{
+ text-align:center;padding:45px 15px;
+ background:white;
+}
+.hero h2{font-size:30px;color:#155eef}
+.btn{
+ display:inline-block;background:#155eef;
+ color:white;padding:12px 22px;
+ border:0;border-radius:8px;
+ text-decoration:none;font-weight:bold;
+ cursor:pointer;
+}
+.container{
+ max-width:480px;margin:25px auto;
+ padding:20px;background:white;
+ border-radius:15px;
+ box-shadow:0 3px 15px #dce5f5;
+}
+input{
+ width:100%;padding:13px;margin:9px 0;
+ border:1px solid #ccd5e5;border-radius:7px;
+}
+button{width:100%;margin-top:10px}
+.price{font-size:32px;color:#155eef;font-weight:bold}
+footer{
+ background:#155eef;color:white;
+ text-align:center;padding:20px;margin-top:30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>SkillGrow</h1>
+<p>Learn Skills. Grow Your Future.</p>
+<nav>
+<a href="#home">Home</a>
+<a href="#register">Register</a>
+<a href="#login">Login</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h2>Welcome to SkillGrow</h2>
+<p>Learn New Skills and Build Your Future!</p>
+<a href="#register" class="btn">Book Your Workshop</a>
+</section>
+
+<section class="container" id="register">
+<h2>Workshop Registration</h2>
+<p>Register for our special workshop.</p>
+<form id="bookingForm">
+<input id="name" placeholder="Full Name" required>
+<input id="phone" type="tel" placeholder="Mobile Number"
+pattern="[0-9]{10}" required>
+<input id="age" type="number" placeholder="Age"
+min="1" max="120" required>
+<p>Workshop Fee:</p>
+<div class="price">₹99</div>
+<button class="btn" type="submit">Continue to Booking</button>
+</form>
+<p id="message"></p>
+</section>
+
+<section class="container" id="login">
+<h2>Login / Sign Up</h2>
+<p>Account features coming soon.</p>
+<a class="btn" href="#register">Register Now</a>
+</section>
+
+<section class="container">
+<h2>Contact Us</h2>
+<p>Have questions? Contact us on WhatsApp.</p>
+<a class="btn"
+href="https://wa.me/919356924298?text=Hello%20SkillGrow"
+target="_blank">Contact on WhatsApp</a>
+</section>
+
+<footer>
+<p>© 2026 SkillGrow. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById("bookingForm")
+.addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value;
+ const phone=document.getElementById("phone").value;
+ const age=document.getElementById("age").value;
+ const msg="Hello SkillGrow, I want to register for the ₹99 workshop. Name: "+name+" Mobile: "+phone+" Age: "+age;
+ document.getElementById("message").innerText=
+ "Please contact SkillGrow on WhatsApp to confirm your registration.";
+ window.open("https://wa.me/919356924298?text="+encodeURIComponent(msg),"_blank");
+});
+</script>
+
+</body>
+</html>
