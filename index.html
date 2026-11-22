@@ -6,248 +6,231 @@
   <title>Life Changing Opportunity</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-    body {
-      background: #f4f8ff;
-      color: #14213d;
-    }
+    body { background: #f4f8ff; color: #14213d; }
 
-    header {
-      background: #155eef;
+    /* ===== TOP BANNER: logo + overlay ===== */
+    .top-banner {
+      position: relative;
+      text-align: center;
       color: white;
-      text-align: center;
-      padding: 25px 15px;
+      padding: 40px 15px 30px;
+      background: linear-gradient(135deg, #083b9a, #2878ff);
+      background-image: url("bg.jpg"), linear-gradient(135deg, #083b9a, #2878ff);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .top-banner .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .top-banner .content { position: relative; z-index: 1; }
+
+    .logo {
+      height: 80px;
+      margin-bottom: 12px;
+      animation: logoPop 1s ease-out both, float 3s ease-in-out 1s infinite;
+    }
+    .top-banner h1 { font-size: 27px; margin-bottom: 8px; animation: slideUp .8s .3s ease-out both; }
+    .top-banner p  { font-size: 14px; animation: slideUp .8s .5s ease-out both; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes logoPop {
+      from { opacity: 0; transform: scale(.4) rotate(-90deg); }
+      to   { opacity: 1; transform: scale(1) rotate(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero h2, .hero p { animation: slideUp .8s ease-out both; }
+    .hero p { animation-delay: .2s; }
+    .container > div { animation: slideUp .6s ease-out both; }
+    .container > div:nth-child(2) { animation-delay: .05s; }
+    .container > div:nth-child(3) { animation-delay: .1s; }
+    .container > div:nth-child(4) { animation-delay: .15s; }
+    .container > div:nth-child(5) { animation-delay: .2s; }
+    .container > div:nth-child(6) { animation-delay: .25s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
     }
 
-    header h1 {
-      font-size: 27px;
-      margin-bottom: 8px;
-    }
+    /* ===== PAGE STYLES ===== */
+    .hero { text-align: center; padding: 65px 18px 35px; }
+    .hero h2 { font-size: 30px; line-height: 1.3; margin-bottom: 15px; }
+    .hero p { color: #526078; font-size: 16px; line-height: 1.6; margin-bottom: 25px; }
 
-    header p {
-      font-size: 14px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 65px 18px 35px;
-    }
-
-    .hero h2 {
-      font-size: 30px;
-      line-height: 1.3;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      color: #526078;
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 550px;
-      margin: auto;
-      padding-bottom: 35px;
-    }
+    .container { width: 90%; max-width: 550px; margin: auto; padding-bottom: 35px; }
 
     .btn {
-      display: block;
-      width: 100%;
-      padding: 17px 12px;
-      margin: 16px 0;
-      border-radius: 10px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: bold;
-      color: white;
-      background: #155eef;
+      display: block; width: 100%; padding: 17px 12px; margin: 16px 0;
+      border-radius: 10px; text-align: center; text-decoration: none;
+      font-size: 15px; font-weight: bold; color: white; background: #155eef;
       box-shadow: 0 4px 12px #00000018;
+      transition: transform .2s, background .2s;
     }
+    .btn:hover { background: #0848c7; transform: translateY(-2px); }
+    .whatsapp { background: #16a34a; }
+    .whatsapp:hover { background: #12833c; }
 
-    .btn:hover {
-      background: #0848c7;
-    }
-
-    .whatsapp {
-      background: #16a34a;
-    }
-
-    .whatsapp:hover {
-      background: #12833c;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px 12px;
-      background: #e5edff;
-      color: #526078;
-      font-size: 13px;
-    }
+    footer { text-align: center; padding: 25px 12px; background: #e5edff; color: #526078; font-size: 13px; }
   </style>
 </head>
 
-<!-- ONLINE EARNING SECTION -->
-
-<section style="background:linear-gradient(135deg,#083b9a,#2878ff); color:white; text-align:center; padding:65px 20px;">
-
-  <h2 style="font-size:30px; margin-bottom:18px;">
-    COMPLETE COMPANY TASKS & EARN ONLINE
-  </h2>
-
-  <h3 style="font-size:23px; margin-bottom:15px;">
-    Learn. Complete Tasks. Earn.
-  </h3>
-
-  <p style="max-width:700px; margin:auto; line-height:1.8;">
-    Discover how to complete company-provided tasks,
-    build digital skills and earn through eligible online work.
-  </p>
-
-  <p style="max-width:700px; margin:20px auto 0; font-size:12px; color:#e4edff;">
-    Company name, task details and payment information
-    will be shared on WhatsApp. Earnings depend on task
-    availability and successful completion; income is not guaranteed.
-  </p>
-
-  <a href="https://wa.me/919356924298?text=Hello%2C%20I%20want%20to%20know%20about%20company%20tasks%20and%20earning."
-     target="_blank"
-     style="display:inline-block; background:white; color:#155eef; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top:25px;">
-     KNOW MORE ON WHATSAPP
-  </a>
-
-</section>
-  
-<section style="background:#f0f6ff; padding:35px 18px; text-align:center; border-radius:16px; margin:25px auto; max-width:850px;">
-
-  <h2 style="color:#155eef; font-size:26px; margin-bottom:15px;">
-    🎥 WATCH THIS VIDEO TO KNOW MORE!
-  </h2>
-
-  <p style="color:#526078; line-height:1.7; margin-bottom:20px;">
-    Watch this video completely to understand how the work works.
-  </p>
-
-  <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/tWH1_B8Jekk"
-      title="Team Star Introduction Video"
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <p style="margin-top:20px; color:#14213d; line-height:1.8;">
-    ⏱️ It's just a 10-minute video.<br>
-    Please watch the complete video to understand the work and process.
-  </p>
-
-  <a href="https://wa.me/919356924298?text=Interested"
-     target="_blank"
-     style="display:inline-block; background:#16a34a; color:white; padding:15px 28px; margin-top:20px; border-radius:9px; text-decoration:none; font-weight:bold;">
-     💬 MESSAGE "INTERESTED"
-  </a>
-
-  <div style="margin-top:30px; border-top:1px solid #d5e2f5; padding-top:20px;">
-
-    <h3 style="color:#155eef;">MORE INFORMATION</h3>
-
-    <p style="margin:15px 0;">
-      📲 TEAM STAR TELEGRAM
-    </p>
-
-    <a href="https://t.me/+CTEsJWzuIddhMWQ9"
-       target="_blank"
-       style="color:#155eef; font-weight:bold;">
-       Join Telegram
-    </a>
-
-    <p style="margin:20px 0 10px;">
-      🌐 TEAM STAR LANDING PAGE
-    </p>
-
-    <a href="https://team-star-httt.my.canva.site/"
-       target="_blank"
-       style="color:#155eef; font-weight:bold;">
-       Visit Landing Page
-    </a>
-
-  </div>
-
-</section>
-  
-  
 <body>
 
-  <header>
-    <h1>Life Changing Opportunity</h1>
-    <p>Learn Skills. Explore Opportunities.</p>
+  <!-- TOP BANNER -->
+  <header class="top-banner">
+    <div class="overlay"></div>
+    <div class="content">
+      <img src="logo.svg" alt="Life Changing Opportunity Logo" class="logo">
+      <h1>Life Changing Opportunity</h1>
+      <p>Learn Skills. Explore Opportunities.</p>
+    </div>
   </header>
 
   <section class="hero">
-    <h2>BOOK YOUR WORKSHOP SLOT AND START EARNING</h2>
+    <h2>BOOK YOUR WORKSHOP SLOT AND START LEARNING</h2>
     <p>
       Learn digital skills, explore online business
       opportunities and start your learning journey.
     </p>
   </section>
 
-  
-<section class="container">
-  <h2 style="text-align:center; color:#155eef; margin-bottom:20px;">
-    WHO CAN JOIN?
-  </h2>
+  <!-- ONLINE EARNING SECTION -->
+  <section style="background:linear-gradient(135deg,#083b9a,#2878ff); color:white; text-align:center; padding:65px 20px;">
 
-  <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">
-    🎓 10th–12th Pass Students
-  </div>
+    <h2 style="font-size:30px; margin-bottom:18px;">
+      COMPLETE COMPANY TASKS & EARN ONLINE
+    </h2>
 
-  <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">
-    👥 Age 16+ Required
-  </div>
+    <h3 style="font-size:23px; margin-bottom:15px;">
+      Learn. Complete Tasks. Earn.
+    </h3>
 
-  <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">
-    🏠 Housewife
-  </div>
+    <p style="max-width:700px; margin:auto; line-height:1.8;">
+      Discover how to complete company-provided tasks,
+      build digital skills and earn through eligible online work.
+    </p>
 
-  <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">
-    💼 Job Professionals
-  </div>
+    <p style="max-width:700px; margin:20px auto 0; font-size:12px; color:#e4edff;">
+      Company name, task details and payment information
+      will be shared on WhatsApp. Earnings depend on task
+      availability and successful completion; income is not guaranteed.
+    </p>
 
-  <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">
-    📱 Mobile / Computer Required
-  </div>
-</section>
+    <a href="https://wa.me/919356924298?text=Hello%2C%20I%20want%20to%20know%20about%20company%20tasks%20and%20earning."
+       target="_blank"
+       style="display:inline-block; background:white; color:#155eef; padding:15px 25px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top:25px;">
+       KNOW MORE ON WHATSAPP
+    </a>
 
-  <section class="container"> 
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section style="background:#f0f6ff; padding:35px 18px; text-align:center; border-radius:16px; margin:25px auto; max-width:850px;">
+
+    <h2 style="color:#155eef; font-size:26px; margin-bottom:15px;">
+      🎥 WATCH THIS VIDEO TO KNOW MORE!
+    </h2>
+
+    <p style="color:#526078; line-height:1.7; margin-bottom:20px;">
+      Watch this video completely to understand how the work works.
+    </p>
+
+    <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/tWH1_B8Jekk"
+        title="Team Star Introduction Video"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p style="margin-top:20px; color:#14213d; line-height:1.8;">
+      ⏱️ It's just a 10-minute video.<br>
+      Please watch the complete video to understand the work and process.
+    </p>
+
+    <a href="https://wa.me/919356924298?text=Interested"
+       target="_blank"
+       style="display:inline-block; background:#16a34a; color:white; padding:15px 28px; margin-top:20px; border-radius:9px; text-decoration:none; font-weight:bold;">
+       💬 MESSAGE "INTERESTED"
+    </a>
+
+    <div style="margin-top:30px; border-top:1px solid #d5e2f5; padding-top:20px;">
+
+      <h3 style="color:#155eef;">MORE INFORMATION</h3>
+
+      <p style="margin:15px 0;">📲 TEAM STAR TELEGRAM</p>
+
+      <a href="https://t.me/+CTEsJWzuIddhMWQ9" target="_blank" style="color:#155eef; font-weight:bold;">
+        Join Telegram
+      </a>
+
+      <p style="margin:20px 0 10px;">🌐 TEAM STAR LANDING PAGE</p>
+
+      <a href="https://team-star-httt.my.canva.site/" target="_blank" style="color:#155eef; font-weight:bold;">
+        Visit Landing Page
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- WHO CAN JOIN -->
+  <section class="container">
+    <h2 style="text-align:center; color:#155eef; margin-bottom:20px;">
+      WHO CAN JOIN?
+    </h2>
+
+    <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">🎓 10th–12th Pass Students</div>
+    <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">👥 Age 16+ Required</div>
+    <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">🏠 Housewife</div>
+    <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">💼 Job Professionals</div>
+    <div style="background:white; padding:20px; margin-bottom:12px; border-radius:10px;">📱 Mobile / Computer Required</div>
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="container">
 
     <a class="btn"
-    href="https://wa.me/919356924298?text=Hello%2C%20I%20want%20to%20know%20about%20available%20workshop%20slots."
-    target="_blank">
-      BOOK YOUR WORKSHOP SLOT AND START EARNING
+       href="https://wa.me/919356924298?text=Hello%2C%20I%20want%20to%20know%20about%20available%20workshop%20slots."
+       target="_blank">
+      BOOK YOUR WORKSHOP SLOT
     </a>
 
     <a class="btn"
-    href="https://wa.me/919356924298?text=Hello%2C%20I%20want%20payment%20instructions%20for%20booking%20my%20workshop%20slot."
-    target="_blank">
+       href="https://wa.me/919356924298?text=Hello%2C%20I%20want%20payment%20instructions%20for%20booking%20my%20workshop%20slot."
+       target="_blank">
       PAY ₹99 TO BOOK YOUR SLOT
     </a>
 
     <a class="btn whatsapp"
-    href="https://wa.me/919356924298?text=Hello%20Life%20Changing%20Opportunity%2C%20I%20want%20more%20information."
-    target="_blank">
+       href="https://wa.me/919356924298?text=Hello%20Life%20Changing%20Opportunity%2C%20I%20want%20more%20information."
+       target="_blank">
       CONTACT US ON WHATSAPP AND CHAT WITH US FOR MORE INFO
     </a>
 
+  </section>
+
+  <!-- ABOUT & FEE DETAILS -->
+  <section class="container">
+    <div style="background:white; padding:20px; border-radius:10px; line-height:1.8; font-size:14px;">
+      <h3 style="color:#155eef; margin-bottom:10px;">ABOUT US & FEE DETAILS</h3>
+      🏢 <b>Organiser:</b> Harshit Jadhav<br>
+      📍 <b>Address:</b> Mumbai, Maharashtra 400002, India<br>
+      💰 <b>₹99:</b> Workshop slot booking fee<br>
+      🔁 <b>Refund policy:</b> Payment is 100% refundable
+    </div>
   </section>
 
   <footer>
